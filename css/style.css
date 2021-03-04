@@ -63,10 +63,14 @@ a{
 
 /* MAIN */
 
-.main-content::after, .main-content::before {
-    display: table;
-    content: "";
-    clear: both;
+.main-container{
+    display: flex;
+}
+
+@media (min-width: 739px){
+    .main-container{
+        flex-direction: column;
+    }
 }
 
 /* SIDE NAV  */
@@ -74,7 +78,6 @@ a{
 .side-nav{
     width:300px;
     background: #252525;
-    float:left;
 }
 
 .side-nav li a{
@@ -105,23 +108,22 @@ a{
 }
 
 .nav-paginas::before{
-    background-position: 0 calc(24px*2);
+    background-position: 0 calc(-24px*2);
 }
 
 .nav-plugins::before{
-    background-position: 0 calc(24px*3);
+    background-position: 0 calc(-24px*3);
 }
 
 .nav-formularios::before{
-    background-position: 0 calc(24px*4);
+    background-position: 0 calc(-24px*4);
 }
 
 .nav-hospedagens:before{
-    background-position: 0 calc(24px*5);
+    background-position: 0 calc(-24px*5);
 }
 
 .produtos{
-    float: left;
     width: calc(100% - 300px);
     margin: 0 auto;
     max-width: 960px;
@@ -151,5 +153,72 @@ a{
     border-radius: 4px  ;
     float: right;
     text-align: center;
+}
+
+.produtos-item{
+    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.35);
+    margin-top: 20px;
+    position: relative;
+}
+
+.produtos-item::before, .produtos-item::after{
+    content: "";
+    display: table;
+    
+    clear: both;
+}
+
+.produtos-item img{
+    float: left;
+}
+
+.produtos-item a{
+    width:24px;
+    height:24px;
+    overflow: hidden;
+    text-indent: -200px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background: url('../img/edit.svg') no-repeat;
+}
+
+.produtos-item a:hover{
+    background: url('../img/hover.svg') no-repeat;
+    height: 20px;
+}
+
+.produtos-item ul{
+    float: left;
+    padding: 0 20px;
+    width:calc(100% - 140px);
+
+}
+
+.produtos-item li{
+    border-bottom: 1px solid #e7e4d8;
+    padding: 10px 0;
+    font-size: 1.125em;
+    font-family: Courier, monospace;
+
+}
+
+.produtos-item span{
+    font-weight: bold;
+    width: 70px;
+    display: inline-block;
+}
+
+.produtos-item li:last-child{
+    border:none;
+}
+
+.footer{
+    background: #d6d3c8;
+    padding: 60px 0;
+    text-align: center;
+    line-height: 1.4em;
+    font-size: 1.125em;
 }
 
