@@ -61,13 +61,24 @@ a{
     padding-left: 0px;
 }
 
+@media (max-width: 739px){
+    .header-logo{
+       float: none;
+    }
+    .header-menu ul{
+        float: none;
+        margin-top: 10px;
+    }
+}
+
+
 /* MAIN */
 
 .main-container{
     display: flex;
 }
 
-@media (min-width: 739px){
+@media (max-width: 739px){
     .main-container{
         flex-direction: column;
     }
